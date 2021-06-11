@@ -1,0 +1,34 @@
+name: room_monitor
+description: This app is nabe1005's room monitoring system.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_svg: ^0.22.0
+  flutter_svg_provider: ^0.1.9
+  flutter_hooks: ^0.17.0
+  flutter_launcher_icons: ^0.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+flutter_icons:
+  image_path: "assets/icon.png"
+  android: true
+  ios: true
