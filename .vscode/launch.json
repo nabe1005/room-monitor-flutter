@@ -12,6 +12,16 @@
       "args": ["--debug"],
     },
     {
+      "name": "devVerboseDebug",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--debug",
+        "--verbose"
+      ],
+    },
+    {
       "name": "release",
       "request": "launch",
       "type": "dart",

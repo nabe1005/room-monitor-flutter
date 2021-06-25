@@ -3,12 +3,14 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:room_monitor/main.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key? key}) : super(key: key);
+  final String timeText;
+  const Header({Key? key, required this.timeText}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final double height = 320.0;
+    final double height = 240.0;
     return Container(
+      width: MediaQuery.of(context).size.width,
       height: height,
       child: Stack(
         children: [
@@ -19,8 +21,22 @@ class Header extends StatelessWidget {
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: const EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 60),
               child: _HeaderTitle(),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Text(
+                timeText,
+                style: TextStyle(
+                  color: kWhite,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           )
         ],
@@ -32,14 +48,14 @@ class Header extends StatelessWidget {
 class HeaderCurveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    final w1 = size.width * 0.6;
+    final w1 = size.width * 0.5;
     return Path()
       ..lineTo(0, size.height * 0.5)
       ..quadraticBezierTo(
         w1,
         size.height,
         size.width,
-        size.height * 0.6,
+        size.height * 0.5,
       )
       ..lineTo(size.width, 0)
       ..close();
@@ -93,7 +109,7 @@ class _HeaderTitle extends StatelessWidget {
           'nabe1005\'s',
           style: TextStyle(
             fontSize: 24,
-            color: kTextColor,
+            color: kWhite,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -102,7 +118,7 @@ class _HeaderTitle extends StatelessWidget {
           'Room Monitoring System',
           style: TextStyle(
             fontSize: 24,
-            color: kTextColor,
+            color: kWhite,
             fontWeight: FontWeight.w500,
           ),
         ),
