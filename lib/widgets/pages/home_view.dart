@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:room_monitor/widgets/components/header.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,6 +7,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      top: false,
       child: SingleChildScrollView(
         child: Column(
           children: [

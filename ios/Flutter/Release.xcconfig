@@ -1,1 +1,5 @@
 #include "Generated.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER=com.nabe1005.room-montior
+DISPLAY_NAME=RoomMonitor
+ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon-release

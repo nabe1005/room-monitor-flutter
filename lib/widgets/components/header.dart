@@ -30,13 +30,9 @@ class Header extends StatelessWidget {
 }
 
 class HeaderCurveClipper extends CustomClipper<Path> {
-  final double maxPointRatio;
-
-  HeaderCurveClipper(this.maxPointRatio);
-
   @override
   Path getClip(Size size) {
-    final w1 = size.width * maxPointRatio;
+    final w1 = size.width * 0.6;
     return Path()
       ..lineTo(0, size.height * 0.5)
       ..quadraticBezierTo(
@@ -64,25 +60,8 @@ class _HeaderBackground extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = useAnimationController(
-      duration: const Duration(seconds: 58),
-    );
-    final double _animation = useAnimation(
-      Tween<double>(begin: 0.2, end: 0.8).animate(_controller),
-    );
-
-    useEffect(
-      () {
-        final second = DateTime.now().second;
-        _controller.forward(from: second / 60);
-        _controller.repeat();
-        return;
-      },
-      const [],
-    );
-
     return ClipPath(
-      clipper: HeaderCurveClipper(_animation),
+      clipper: HeaderCurveClipper(),
       child: Container(
         width: double.infinity,
         height: height,

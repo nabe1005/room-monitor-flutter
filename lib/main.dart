@@ -12,8 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final themeColor = Color.fromRGBO(0, 148, 115, 1);
-
     return MaterialApp(
       title: 'nabe1005\'s Room Monitoring System',
       // theme: ThemeData.light(),
